@@ -11,10 +11,7 @@ class ChatRequest(BaseModel):
 @app.post("/chat")
 def chat_input(request : ChatRequest): 
     response = generate_answer(request.question)
-    return {
-        "answer" : response
-    }
-    
+    return response
     
 @app.get("/health")
 def health_check():
